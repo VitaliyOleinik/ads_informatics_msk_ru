@@ -87,6 +87,28 @@ public class BinarySearchTree {
 
         return searchValue(root.right, value);
     }
+
+    void printTree() {
+        printTreeRec(root, 0);
+    }
+
+    private void printTreeRec(Node root, int space) {
+        int count = 5; // кол-во пробелов между уровнями
+        if (root == null) {
+            return;
+        }
+
+        space += count;
+
+        printTreeRec(root.right, space);
+
+        System.out.println();
+        for (int i = count; i < space; i++)
+            System.out.print(" ");
+        System.out.print(root.value + "\n");
+
+        printTreeRec(root.left, space);
+    }
 }
 
 class Main {
@@ -119,5 +141,7 @@ class Main {
         // Поиск узла в дереве
         System.out.println(tree.search(30)); // Вывод: true
         System.out.println(tree.search(90)); // Вывод: false
+
+        tree.printTree();
     }
 }
