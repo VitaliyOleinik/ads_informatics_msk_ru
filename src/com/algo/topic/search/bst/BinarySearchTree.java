@@ -48,6 +48,30 @@ public class BinarySearchTree {
         }
     }
 
+    void preorder() {
+        preorderRec(root);
+    }
+
+    private void preorderRec(Node root) {
+        if (root != null) {
+            System.out.print(root.value + " ");
+            preorderRec(root.left);
+            preorderRec(root.right);
+        }
+    }
+
+    void postorder() {
+        postorderRec(root);
+    }
+
+    private void postorderRec(Node root) {
+        if (root != null) {
+            postorderRec(root.left);
+            postorderRec(root.right);
+            System.out.print(root.value + " ");
+        }
+    }
+
     boolean search(int value) {
         return searchValue(root, value) != null;
     }
@@ -79,8 +103,19 @@ class Main {
         tree.insert(80);
 
         // Симметричный обход дерева
+        System.out.print("In-order: ");
         tree.inorder(); // Вывод: 20 30 40 50 60 70 80
+        System.out.println();
 
+        // Прямой обход дерева
+        System.out.print("Pre-order: ");
+        tree.preorder(); // Вывод: 50 30 20 40 70 60 80
+        System.out.println();
+
+        // Обратный обход дерева
+        System.out.print("Post-order: ");
+        tree.postorder(); // Вывод: 20 40 30 60 80 70 50
+        System.out.println();
         // Поиск узла в дереве
         System.out.println(tree.search(30)); // Вывод: true
         System.out.println(tree.search(90)); // Вывод: false
