@@ -1,4 +1,4 @@
-package com.algo.topic.search.bst;
+package com.algo.topic.search.trees.bst;
 
 class Node {
     int value;

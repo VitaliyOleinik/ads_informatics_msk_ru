@@ -1,4 +1,4 @@
-package com.algo.topic.search.binarysearch;
+package com.algo.topic.search.trees.binarysearch;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

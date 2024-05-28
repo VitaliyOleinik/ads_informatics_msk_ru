@@ -1,6 +1,5 @@
-package com.algo.topic.search.binarysearch;
+package com.algo.topic.search.trees.binarysearch;
 
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class BinarySearchTask4 {
